@@ -2,17 +2,16 @@
 
 use JetBrains\PhpStorm\NoReturn;
 
-if (!function_exists('dd')) {
+if (! function_exists('dd')) {
     #[NoReturn]
     function dd(...$var): void
     {
         var_dump($var);
-        die();
+        exit();
     }
 }
 
-
-if (!function_exists('env')) {
+if (! function_exists('env')) {
     function env(string $key, $default = null): mixed
     {
         return $_ENV[$key] ?? $default;
